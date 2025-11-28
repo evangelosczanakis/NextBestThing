@@ -1,0 +1,203 @@
+{
+    "Spaghetti & Meatballs": [
+        {
+            "ingredient": "Pasta",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 0.98,
+                "store": "Walmart",
+                "dietary": [
+                    "vegan",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Barilla",
+                "price": 1.84
+            }
+        },
+        {
+            "ingredient": "Marinara Sauce",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 1.50,
+                "store": "Walmart",
+                "dietary": [
+                    "gluten_free",
+                    "vegan",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Rao's",
+                "price": 6.80
+            }
+        },
+        {
+            "ingredient": "Ground Beef",
+            "cheapest": {
+                "brand": "Marketside",
+                "price": 5.97,
+                "store": "Walmart",
+                "dietary": [
+                    "gluten_free",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Laura's Lean",
+                "price": 9.48
+            }
+        },
+        {
+            "ingredient": "Parmesan Cheese",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 2.22,
+                "store": "Walmart",
+                "dietary": [
+                    "gluten_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Kraft",
+                "price": 3.98
+            }
+        }
+    ],
+    "Chicken Stir Fry": [
+        {
+            "ingredient": "Chicken Breast",
+            "cheapest": {
+                "brand": "Kirkland",
+                "price": 12.99,
+                "store": "Costco",
+                "dietary": [
+                    "gluten_free",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Perdue",
+                "price": 16.50
+            }
+        },
+        {
+            "ingredient": "Frozen Veggies",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 2.50,
+                "store": "Walmart",
+                "dietary": [
+                    "vegan",
+                    "gluten_free",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Birds Eye",
+                "price": 4.20
+            }
+        },
+        {
+            "ingredient": "Soy Sauce",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 1.88,
+                "store": "Walmart",
+                "dietary": [
+                    "vegan",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Kikkoman",
+                "price": 3.48
+            }
+        },
+        {
+            "ingredient": "Rice",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 1.34,
+                "store": "Walmart",
+                "dietary": [
+                    "vegan",
+                    "gluten_free",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Uncle Ben's",
+                "price": 2.48
+            }
+        }
+    ],
+    "Tacos": [
+        {
+            "ingredient": "Taco Shells",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 1.48,
+                "store": "Walmart",
+                "dietary": [
+                    "gluten_free",
+                    "vegan",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Old El Paso",
+                "price": 2.98
+            }
+        },
+        {
+            "ingredient": "Ground Beef",
+            "cheapest": {
+                "brand": "Marketside",
+                "price": 5.97,
+                "store": "Walmart",
+                "dietary": [
+                    "gluten_free",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Laura's Lean",
+                "price": 9.48
+            }
+        },
+        {
+            "ingredient": "Salsa",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 1.98,
+                "store": "Walmart",
+                "dietary": [
+                    "vegan",
+                    "gluten_free",
+                    "dairy_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Tostitos",
+                "price": 3.50
+            }
+        },
+        {
+            "ingredient": "Shredded Cheese",
+            "cheapest": {
+                "brand": "Great Value",
+                "price": 2.22,
+                "store": "Walmart",
+                "dietary": [
+                    "gluten_free"
+                ]
+            },
+            "name_brand": {
+                "brand": "Kraft",
+                "price": 3.98
+            }
+        }
+    ]
+}

@@ -1,55 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { ledger } from './services/ledger';
-import ManualForm from './components/ManualForm';
-import ReceiptScanner from './components/ReceiptScanner';
+import React, { useState } from 'react';
+import Dashboard from './views/Dashboard';
+import BudgetTab from './views/BudgetTab';
+import GroceryMealPlanner from './views/GroceryMealPlanner';
+import { LayoutDashboard, Wallet, Search } from 'lucide-react';
 
 function App() {
-    const [balance, setBalance] = useState(0);
-    const [activeTab, setActiveTab] = useState('manual');
-
-    useEffect(() => {
-        const sub = ledger.getBalance().subscribe(val => {
-            setBalance(val);
-        });
-        return () => sub.unsubscribe();
-    }, []);
+    const [activeTab, setActiveTab] = useState('dashboard');
 
     return (
-        <div className="min-h-screen bg-gray-100 p-4">
-            <div className="max-w-md mx-auto space-y-6">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans text-slate-800">
+            {/* Main Content */}
+            <main className="pb-24 pt-8 px-4">
+                {activeTab === 'dashboard' && <Dashboard />}
+                {activeTab === 'budget' && <BudgetTab />}
+                {activeTab === 'search' && <GroceryMealPlanner />}
+            </main>
 
-                {/* Header / Balance Card */}
-                <div className="bg-blue-600 text-white p-6 rounded-xl shadow-lg">
-                    <h1 className="text-sm opacity-80 uppercase tracking-wider">Total Balance</h1>
-                    <div className="text-4xl font-bold mt-2">
-                        ${balance.toFixed(2)}
-                    </div>
-                </div>
-
-                {/* Navigation Tabs */}
-                <div className="flex space-x-2 bg-white p-1 rounded-lg shadow">
+            {/* Bottom Navigation */}
+            <nav className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg border-t border-white/20 shadow-lg z-50 pb-safe">
+                <div className="flex justify-around items-center max-w-md mx-auto">
                     <button
-                        onClick={() => setActiveTab('manual')}
-                        className={`flex-1 py-2 rounded-md transition-colors ${activeTab === 'manual' ? 'bg-blue-100 text-blue-700 font-medium' : 'text-gray-500 hover:bg-gray-50'
-                            }`}
+                        onClick={() => setActiveTab('dashboard')}
+                        className={`flex flex-col items-center p-4 transition-colors ${activeTab === 'dashboard' ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
                     >
-                        Manual
+                        <LayoutDashboard size={24} />
+                        <span className="text-xs font-medium mt-1">Dashboard</span>
                     </button>
                     <button
-                        onClick={() => setActiveTab('scan')}
-                        className={`flex-1 py-2 rounded-md transition-colors ${activeTab === 'scan' ? 'bg-blue-100 text-blue-700 font-medium' : 'text-gray-500 hover:bg-gray-50'
-                            }`}
+                        onClick={() => setActiveTab('search')}
+                        className={`flex flex-col items-center p-4 transition-colors ${activeTab === 'search' ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
                     >
-                        Scan Receipt
+                        <Search size={24} />
+                        <span className="text-xs font-medium mt-1">Search</span>
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('budget')}
+                        className={`flex flex-col items-center p-4 transition-colors ${activeTab === 'budget' ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+                    >
+                        <Wallet size={24} />
+                        <span className="text-xs font-medium mt-1">Budget</span>
                     </button>
                 </div>
-
-                {/* Content Area */}
-                <div className="transition-all duration-300">
-                    {activeTab === 'manual' ? <ManualForm /> : <ReceiptScanner />}
-                </div>
-
-            </div>
+            </nav>
         </div>
     );
 }

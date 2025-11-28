@@ -1,0 +1,14 @@
+[
+    {
+        "name_brand": "Heinz Ketchup",
+        "generic_brand": "Great Value Ketchup",
+        "price_gap": 2.50,
+        "store": "Walmart"
+    },
+    {
+        "name_brand": "Tide Pods",
+        "generic_brand": "Great Value Pods",
+        "price_gap": 5.00,
+        "store": "Walmart"
+    }
+]
