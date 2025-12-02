@@ -1,9 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import GlassCard from './GlassCard';
-import { Plus, Save, FolderOpen, Trash2 } from 'lucide-react';
+import { Plus, Save, FolderOpen, Trash2, AlertCircle } from 'lucide-react';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
+
+const EmptyBudgetState = ({ setTotalLumpSum }) => (
+    <GlassCard className="p-8 flex flex-col items-center justify-center text-center min-h-[400px]">
+        <div className="bg-indigo-100 p-4 rounded-full mb-4">
+            <AlertCircle size={48} className="text-indigo-600" />
+        </div>
+        <h3 className="text-xl font-bold text-slate-800 mb-2">Start Your Budget</h3>
+        <p className="text-slate-500 mb-6 max-w-xs">
+            Enter an income amount to start planning your project allocations.
+        </p>
+        <div className="relative w-48">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">$</span>
+            <input
+                type="number"
+                placeholder="1000"
+                onChange={(e) => setTotalLumpSum(Number(e.target.value))}
+                className="pl-7 pr-4 py-3 w-full rounded-xl bg-white/50 border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-bold text-lg text-slate-800 text-center shadow-sm"
+                autoFocus
+            />
+        </div>
+    </GlassCard>
+);
 
 const ProjectBuilder = () => {
     const [totalLumpSum, setTotalLumpSum] = useState(10000);
@@ -53,12 +75,19 @@ const ProjectBuilder = () => {
         setProjectName(project.name); // Optional: keep name to overwrite?
     };
 
+    if (!totalLumpSum || totalLumpSum <= 0) {
+        return <EmptyBudgetState setTotalLumpSum={setTotalLumpSum} />;
+    }
+
     const totalAllocated = sections.reduce((sum, item) => sum + item.amount, 0);
     const remaining = totalLumpSum - totalAllocated;
 
+    // Ensure we don't pass negative values to the pie chart
+    const safeRemaining = Math.max(0, remaining);
+
     const data = [
         ...sections.map(s => ({ name: s.name, value: s.amount })),
-        { name: 'Remaining', value: Math.max(0, remaining) }
+        { name: 'Remaining', value: safeRemaining }
     ];
 
     const remainingColor = remaining < 0 ? '#EF4444' : '#E5E7EB'; // Red if over, Gray if under

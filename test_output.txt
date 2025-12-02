@@ -1,0 +1,119 @@
+================================================================================
+TESTING PDF PARSERS
+File: df8fadc5-9eef-4b09-9f3c-71c8f394572e.pdf
+================================================================================
+
+================================================================================
+TEST 1: GenericParser (Table-based)
+================================================================================
+DEBUG: GenericParser started. Year detected: 1523
+DEBUG: Page 0 tables found: 0
+DEBUG: Page 1 tables found: 0
+DEBUG: Page 2 tables found: 0
+DEBUG: Page 3 tables found: 0
+SUCCESS: Found 0 transactions
+WARNING: Empty DataFrame returned
+
+================================================================================
+TEST 2: GenericPDFParser (Loose extraction)
+================================================================================
+[GenericPDFParser] Detected Year: 2025
+[GenericPDFParser] Processing Page 1/4
+[GenericPDFParser] No tables found on page 1
+[GenericPDFParser] Processing Page 2/4
+[GenericPDFParser] No tables found on page 2
+[GenericPDFParser] Processing Page 3/4
+[GenericPDFParser] No tables found on page 3
+[GenericPDFParser] Processing Page 4/4
+[GenericPDFParser] No tables found on page 4
+[GenericPDFParser] No transactions found
+SUCCESS: Found 0 transactions
+WARNING: Empty DataFrame returned
+
+================================================================================
+TEST 3: BruteForceParser (Regex-based)
+================================================================================
+[BruteForceParser] Detected Year: 2025
+[BruteForceParser] Processing Page 1/4
+[BruteForceParser] Section detected: WITHDRAWALS (multiplier = -1.0)
+[BruteForceParser] Section detected: DEPOSITS (multiplier = +1.0)
+[BruteForceParser] Processing Page 2/4
+[BruteForceParser] Section detected: WITHDRAWALS (multiplier = -1.0)
+[BruteForceParser] Section detected: DEPOSITS (multiplier = +1.0)
+[BruteForceParser] Page 2, Line 38: Found transaction: 2025-08-22 | $20.00 | ACHWebPmt- Bank Xfer Apple Cas
+[BruteForceParser] Page 2, Line 39: Found transaction: 2025-08-25 | $1780.21 | MobileDeposit Reference No. 07
+[BruteForceParser] Page 2, Line 40: Found transaction: 2025-08-26 | $175.00 | DirectDeposit - Payment
+[BruteForceParser] Page 2, Line 42: Found transaction: 2025-08-27 | $181.00 | DirectDeposit - Payment
+[BruteForceParser] Page 2, Line 44: Found transaction: 2025-08-28 | $550.32 | DirectDeposit - Payroll Wal-Ma
+[BruteForceParser] Page 2, Line 45: Found transaction: 2025-08-28 | $225.00 | DirectDeposit - Payment
+[BruteForceParser] Page 2, Line 47: Found transaction: 2025-08-29 | $25.00 | Direct Deposit - Cashout Venmo
+[BruteForceParser] Page 2, Line 49: Found transaction: 2025-09-02 | $1000.00 | OnlineTransfer From 0000005010
+[BruteForceParser] Page 2, Line 50: Found transaction: 2025-09-02 | $2000.00 | OnlineTransfer From 0000005010
+[BruteForceParser] Page 2, Line 51: Found transaction: 2025-09-11 | $12.00 | Direct Deposit - Cashout Venmo
+[BruteForceParser] Processing Page 3/4
+[BruteForceParser] Section detected: WITHDRAWALS (multiplier = -1.0)
+[BruteForceParser] Page 3, Line 10: Found transaction: 2025-08-25 | $-20.00 | 5418 Debit Card Purchase Apple
+[BruteForceParser] Page 3, Line 14: Found transaction: 2025-08-27 | $-8.98 | 5418 Debit Card Purchase Sheet
+[BruteForceParser] Page 3, Line 16: Found transaction: 2025-08-27 | $-34.92 | POS Purchase Wal-Mart #1640 St
+[BruteForceParser] Page 3, Line 18: Found transaction: 2025-08-28 | $-7.42 | 5418 Debit Card Purchase Taco 
+[BruteForceParser] Page 3, Line 19: Found transaction: 2025-08-29 | $-5.29 | 5418 Debit Card Purchase Sheet
+[BruteForceParser] Page 3, Line 21: Found transaction: 2025-09-02 | $-30.00 | 5418 Debit Card Purchase Champ
+[BruteForceParser] Page 3, Line 23: Found transaction: 2025-09-03 | $-2000.00 | 5418 Debit Card Purchase Rhs B
+[BruteForceParser] Page 3, Line 25: Found transaction: 2025-09-15 | $-22.22 | 5418 Debit Card Purchase Champ
+[BruteForceParser] Page 3, Line 27: Found transaction: 2025-09-17 | $-27.51 | 5418 Debit Card Purchase Champ
+[BruteForceParser] Page 3, Line 29: Found transaction: 2025-09-22 | $-16.48 | 5418 Debit Card Purchase Starb
+[BruteForceParser] Page 3, Line 31: Found transaction: 2025-09-22 | $-4.37 | 5418 Debit Card Purchase You&M
+[BruteForceParser] Page 3, Line 33: Found transaction: 2025-09-22 | $-9.09 | 5418 Debit Card Purchase Sheet
+[BruteForceParser] Page 3, Line 39: Found transaction: 2025-08-22 | $-100.00 | Web Pmt- ACH Pmt Amex Epayment
+[BruteForceParser] Page 3, Line 40: Found transaction: 2025-08-26 | $-75.00 | Direct Payment - Moneyline
+[BruteForceParser] Page 3, Line 42: Found transaction: 2025-08-26 | $-20.00 | Web Pmt- Payment Venmo 1044339
+[BruteForceParser] Page 3, Line 43: Found transaction: 2025-08-26 | $-100.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 45: Found transaction: 2025-08-26 | $-35.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 47: Found transaction: 2025-08-26 | $-25.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 49: Found transaction: 2025-08-26 | $-25.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 51: Found transaction: 2025-08-26 | $-10.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 53: Found transaction: 2025-08-26 | $-10.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 55: Found transaction: 2025-08-27 | $-100.00 | Web Pmt- ACH Pmt Amex Epayment
+[BruteForceParser] Page 3, Line 56: Found transaction: 2025-08-27 | $-50.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 58: Found transaction: 2025-08-27 | $-50.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 60: Found transaction: 2025-08-27 | $-20.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 3, Line 62: Found transaction: 2025-08-28 | $-100.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Processing Page 4/4
+[BruteForceParser] Page 4, Line 8: Found transaction: 2025-08-28 | $-25.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 10: Found transaction: 2025-08-28 | $-25.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 12: Found transaction: 2025-08-28 | $-25.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 14: Found transaction: 2025-08-29 | $-45.00 | Web Pmt- ACH Pmt Amex Epayment
+[BruteForceParser] Page 4, Line 15: Found transaction: 2025-08-29 | $-200.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 17: Found transaction: 2025-08-29 | $-200.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 19: Found transaction: 2025-08-29 | $-200.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 21: Found transaction: 2025-08-29 | $-200.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 23: Found transaction: 2025-08-29 | $-100.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 25: Found transaction: 2025-08-29 | $-50.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 27: Found transaction: 2025-08-29 | $-25.00 | Web Pmt- Payment Fd Sptsbk Cas
+[BruteForceParser] Page 4, Line 29: Found transaction: 2025-09-02 | $-75.00 | Direct Payment - Moneyline
+[BruteForceParser] Page 4, Line 31: Found transaction: 2025-09-02 | $-75.00 | Web Pmt- Payment Venmo 1044551
+[BruteForceParser] Page 4, Line 32: Found transaction: 2025-09-02 | $-9.99 | Direct Payment - Club Fees
+[BruteForceParser] Page 4, Line 34: Found transaction: 2025-09-03 | $-15.73 | Web Pmt- E-Payment Discover 27
+[BruteForceParser] Page 4, Line 35: Found transaction: 2025-09-04 | $-6000.00 | Web Pmt- Tuitionfee Psu 933567
+[BruteForceParser] Page 4, Line 36: Found transaction: 2025-09-09 | $-100.00 | Web Pmt- ACH Pmt Amex Epayment
+[BruteForceParser] Page 4, Line 37: Found transaction: 2025-09-09 | $-75.00 | Direct Payment - Moneyline
+[BruteForceParser] Page 4, Line 39: Found transaction: 2025-09-16 | $-75.00 | Direct Payment - Moneyline
+[BruteForceParser] Page 4, Line 41: Found transaction: 2025-09-18 | $-8.50 | Web Pmt- Payment Venmo 1044916
+[BruteForceParser] Page 4, Line 42: Found transaction: 2025-09-22 | $-12.49 | Direct Payment - Club Fees
+[BruteForceParser] Page 4: Stopping at 'Daily Balance Detail'
+[BruteForceParser] Successfully extracted 57 transactions
+SUCCESS: Found 57 transactions
+
+First 5 transactions:
+        date                               description   amount source
+0 2025-08-22     ACHWebPmt- Bank Xfer Apple Cash Elias    20.00    PDF
+1 2025-08-22      Web Pmt- ACH Pmt Amex Epayment M3612  -100.00    PDF
+2 2025-08-25     MobileDeposit Reference No. 074539848  1780.21    PDF
+3 2025-08-25  5418 Debit Card Purchase Apple Cash Sent   -20.00    PDF
+4 2025-08-26         Web Pmt- Payment Fd Sptsbk Casino   -10.00    PDF
+
+Total Amount: $-4479.46
+
+================================================================================
+TESTING COMPLETE
+================================================================================

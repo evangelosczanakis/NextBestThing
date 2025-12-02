@@ -1,14 +1,115 @@
 [
     {
+        "id": "heinz_ketchup",
         "name_brand": "Heinz Ketchup",
-        "generic_brand": "Great Value Ketchup",
-        "price_gap": 2.50,
-        "store": "Walmart"
+        "price": 4.99,
+        "store": "Walmart",
+        "store_brand_equivalent": "gv_ketchup",
+        "alternatives": [
+            {
+                "id": "gv_ketchup",
+                "name": "Great Value Ketchup",
+                "price": 2.49,
+                "is_organic": false,
+                "is_clean": false,
+                "ingredients_score": 4,
+                "tags": [
+                    "cheapest",
+                    "generic"
+                ]
+            },
+            {
+                "id": "primal_kitchen_ketchup",
+                "name": "Primal Kitchen Organic Ketchup",
+                "price": 5.49,
+                "is_organic": true,
+                "is_clean": true,
+                "ingredients_score": 10,
+                "tags": [
+                    "organic",
+                    "clean",
+                    "expensive"
+                ]
+            },
+            {
+                "id": "annies_ketchup",
+                "name": "Annie's Organic Ketchup",
+                "price": 4.29,
+                "is_organic": true,
+                "is_clean": true,
+                "ingredients_score": 9,
+                "tags": [
+                    "organic",
+                    "clean"
+                ]
+            }
+        ]
     },
     {
+        "id": "tide_pods",
         "name_brand": "Tide Pods",
-        "generic_brand": "Great Value Pods",
-        "price_gap": 5.00,
-        "store": "Walmart"
+        "price": 12.99,
+        "store": "Walmart",
+        "store_brand_equivalent": "gv_pods",
+        "alternatives": [
+            {
+                "id": "gv_pods",
+                "name": "Great Value Pods",
+                "price": 7.99,
+                "is_organic": false,
+                "is_clean": false,
+                "ingredients_score": 3,
+                "tags": [
+                    "cheapest",
+                    "generic"
+                ]
+            },
+            {
+                "id": "seventh_gen_pods",
+                "name": "Seventh Generation Packs",
+                "price": 11.99,
+                "is_organic": true,
+                "is_clean": true,
+                "ingredients_score": 9,
+                "tags": [
+                    "organic",
+                    "clean",
+                    "eco-friendly"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cheerios",
+        "name_brand": "Cheerios",
+        "price": 5.99,
+        "store": "Walmart",
+        "store_brand_equivalent": "gv_oats",
+        "alternatives": [
+            {
+                "id": "gv_oats",
+                "name": "Great Value Oats",
+                "price": 2.50,
+                "is_organic": false,
+                "is_clean": false,
+                "ingredients_score": 5,
+                "tags": [
+                    "cheapest",
+                    "generic"
+                ]
+            },
+            {
+                "id": "cascadian_farm_oats",
+                "name": "Cascadian Farm Organic",
+                "price": 4.50,
+                "is_organic": true,
+                "is_clean": true,
+                "ingredients_score": 10,
+                "tags": [
+                    "organic",
+                    "clean"
+                ]
+            }
+        ]
     }
 ]

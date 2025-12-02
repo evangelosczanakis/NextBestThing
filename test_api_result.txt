@@ -1,0 +1,72 @@
+Testing API: http://127.0.0.1:8000/upload-pdf
+File: df8fadc5-9eef-4b09-9f3c-71c8f394572e.pdf
+================================================================================
+
+Status Code: 500
+Response Headers: {'date': 'Tue, 02 Dec 2025 01:50:08 GMT', 'server': 'uvicorn', 'content-length': '70', 'content-type': 'application/json'}
+
+Response Body:
+{"detail":"[WinError 233] No process is on the other end of the pipe"}
+python : Traceback (most recent 
+call last):
+At line:1 char:1
++ python test_api_upload.py 2>&1 
+| Out-File -Encoding ASCII 
+test_api_re ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (Traceback (most r  
+  ecent call last)::String) [],   
+  RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+  File "C:\Users\anton\NextBiggest
+Thing\NextBestThing\test_api_uploa
+d.py", line 32, in test_upload
+    print(f"\n\u2717 FAILED!")
+    ~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Loc
+al\Programs\Python\Python314\Lib\e
+ncodings\cp1252.py", line 19, in 
+encode
+    return codecs.charmap_encode(i
+nput,self.errors,encoding_table)[0
+]
+           ~~~~~~~~~~~~~~~~~~~~~^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' 
+codec can't encode character 
+'\u2717' in position 2: character 
+maps to <undefined>
+
+During handling of the above 
+exception, another exception 
+occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anton\NextBiggest
+Thing\NextBestThing\test_api_uploa
+d.py", line 40, in <module>
+    test_upload()
+    ~~~~~~~~~~~^^
+  File "C:\Users\anton\NextBiggest
+Thing\NextBestThing\test_api_uploa
+d.py", line 35, in test_upload
+    print(f"\n\u2717 ERROR: 
+{type(e).__name__}: {str(e)}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Loc
+al\Programs\Python\Python314\Lib\e
+ncodings\cp1252.py", line 19, in 
+encode
+    return codecs.charmap_encode(i
+nput,self.errors,encoding_table)[0
+]
+           ~~~~~~~~~~~~~~~~~~~~~^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' 
+codec can't encode character 
+'\u2717' in position 2: character 
+maps to <undefined>

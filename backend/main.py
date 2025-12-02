@@ -40,8 +40,13 @@ async def upload_pdf(file: UploadFile = File(...)):
 
     temp_file = f"temp_{file.filename}"
     try:
+        # with open(temp_file, "wb") as buffer:
+        #     shutil.copyfileobj(file.file, buffer)
+        
+        # FIX: Use async read to avoid WinError 233 on Windows
+        content = await file.read()
         with open(temp_file, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
+            buffer.write(content)
         
         result = extract_transactions(temp_file)
         # SESSION_DATA expects a list of transactions for the detective
